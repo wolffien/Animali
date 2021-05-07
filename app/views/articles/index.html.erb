@@ -16,7 +16,7 @@
         <p class="textdate"><%= article.date %></p>
         <p class="text"><%= article.soin %></p>
         <p class="text"><%= article.animal %></p>
-        <img class="nanimo" src="../../assets/<%= article.icon_path%>">
+        <%= image_tag "#{article.icon_path}.png", class:"nanimo" %>
 
         <div class="parambox">
           <%= link_to image_tag("editer.png", :class => "param" ) , edit_article_path(article) %></a>
@@ -29,6 +29,13 @@
       
   <% end %>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
