@@ -1,0 +1,36 @@
+<%= form_with model: article do |form| %>
+  <div>
+    <%= form.label :date %><br>
+    <%= form.text_area :date %>
+    <% article.errors.full_messages_for(:date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :soin %><br>
+    <%= form.text_area :soin %><br>
+    <% article.errors.full_messages_for(:soin).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :animal %><br>
+    <%= form.text_area :animal %><br>
+    <% article.errors.full_messages_for(:animal).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%=  form.collection_radio_buttons :icon_path, [["animal1"],["animal2"],["animal3"],["animal4"],["animal5"],["animal6"],["animal7"],["animal8"],["animal9"],["animal10"],["animal11"],["animal12"],["animal13"]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
+      <%= b.radio_button + b.label {image_tag("#{b.text}")} %>
+    <% end %>
+  </div>
+
+
+  <div>
+    <%= form.submit "Ajouter un rappel" , class: "create" %>
+  </div>
+<% end %>
